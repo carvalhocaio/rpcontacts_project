@@ -1,14 +1,7 @@
 from textual.app import App
 from textual.containers import Grid, Horizontal, Vertical
 from textual.screen import Screen
-from textual.widgets import (
-    Button,
-    DataTable,
-    Footer,
-    Header,
-    Label,
-    Static
-)
+from textual.widgets import Button, DataTable, Footer, Header, Label, Static
 
 
 class ContactsApp(App):
@@ -19,7 +12,7 @@ class ContactsApp(App):
         ('a', 'add', 'Add'),
         ('d', 'delete', 'Delete'),
         ('c', 'clear_all', 'Clear All'),
-        ('q', 'request_quit', 'Quit')
+        ('q', 'request_quit', 'Quit'),
     ]
 
     def compose(self):
@@ -36,7 +29,7 @@ class ContactsApp(App):
             Button('Delete', variant='warning', id='delete'),
             Static(classes='separator'),
             Button('Clear All', variant='error', id='clear'),
-            classes='buttons_panel'
+            classes='buttons_panel',
         )
         yield Horizontal(contacts_list, buttons_panel)
         yield Footer()
